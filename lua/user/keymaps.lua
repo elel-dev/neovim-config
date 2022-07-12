@@ -19,6 +19,9 @@ keymap("n", "<leader>c", ":q<cr>", opts)
 -- Format
 keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<cr>", opts)
 
+-- Git
+keymap("n", "<leader>g", ":Neogit<cr>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
