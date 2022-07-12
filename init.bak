@@ -1,0 +1,125 @@
+" Vim general config
+syntax on
+set noerrorbells "disable beeping
+set tabstop=4 softtabstop=4 "tab character appear as 4 spaces wide
+set shiftwidth=4 "number of columns to be indeted
+set expandtab "insert spaces when tab
+set smartindent "indent reacting to syntax
+set nu "display line numbers
+set ignorecase "search is not case sensitive
+set smartcase "/The = The, /the = the + The
+set noswapfile "disable swapfile for buffer
+set nobackup "not make a backup before overwriting?
+set incsearch "no incremental searching
+set scrolloff=20 "lines to start scroll down
+set path=. "search into current dir
+set path+=** "search into subdirs
+set wildmenu "disaply all matching when tab complete
+set wildignore+=**/node_modules/** "ignore node modules in find
+set laststatus=2 "always have a statusbat 
+set noshowmode "lightline plugin does the status bar
+set updatetime=100 "update time, mainly for git gutter
+set shortmess+=c "no popup for number of suggestion
+set nohlsearch "no higlight in search
+
+" leader
+let mapleader = " " "set map leader to spacebar
+
+"Plugin manager
+call plug#begin('/home/drugox/.vim/plugged')
+Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark' 
+Plug 'tpope/vim-fugitive' 
+Plug 'airblade/vim-gitgutter' 
+Plug 'itchyny/lightline.vim' 
+Plug 'tpope/vim-commentary' 
+" Plug 'prettier/vim-prettier', { 
+"     \ 'do': 'npm install',
+"     \ 'for': ['javascript', 'javascriptreact', 'astro', 'typescript', 'typescriptreact','css','json','html','markdown']}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'yuezk/vim-js' 
+" Plug 'leafgarland/typescript-vim' 
+" Plug 'maxmellon/vim-jsx-pretty' 
+" Plug 'nikvdp/ejs-syntax'
+" Plug 'vim-scripts/AutoComplPop' 
+Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" Plug 'elel-dev/vim-astro-syntax'
+call plug#end()
+
+" :CocInstall coc-css
+
+" prettier
+" let g:prettier#exec_cmd_path = '~/.vim/plugged/vim-prettier/node_modules/.bin/prettier'
+
+" coc-actions shortcuts
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gt <Plug>(coc-type-definition)
+" nmap <silent> gts :vsp<CR><Plug>(coc-type-definition)<C-W>T
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr :vsp<CR><Plug>(coc-references)<C-W>T
+" nnoremap <silent> T :call CocAction("doHover")<CR>
+
+" Visual and style
+set background=dark
+colorscheme gruvbox
+" colorscheme codedark
+let g:lightline = {'colorscheme':'wombat'} 
+
+" Netrw settings
+nnoremap <leader>s :Vex <CR> :vertical resize 25<CR>
+let g:netrw_browse_split=2 
+let g:netrw_banner=0 
+let g:netrw_winsize=25 
+au FileType netrw nmap <buffer> h -
+au FileType netrw nmap <buffer> <left> -
+au FileType netrw nmap <buffer> l <CR> :wincmd = <CR> :2 wincmd h <CR> :vertical resize 25 <CR>
+au FileType netrw nmap <buffer> <right> <CR> :2 wincmd h <CR> :vertical resize 25 <CR>
+
+" FZF
+" use find (NO EXT DEP) whith directories pruning, 
+" as it prevents the command from ever traversing excluded directories,
+" which can significantly improve performance.
+let $FZF_DEFAULT_COMMAND='find . \! \( -type d -path ./.git -prune \) \! -type d \! -name ''*.tags'' -printf ''%P\n'''
+nnoremap <leader>zz :FZF ~<CR>
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+
+" Windows managment shortcuts
+nnoremap <leader>h :wincmd h <CR>
+nnoremap <leader>j :wincmd j <CR>
+nnoremap <leader>k :wincmd k <CR>
+nnoremap <leader>l :wincmd l <CR>
+nnoremap <leader>c :wincmd c <CR>
+nnoremap <silent> <leader>+ :vertical resize +15<CR>
+nnoremap <silent> <leader>- :vertical resize -15<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>qq :q!<CR>
+nnoremap <leader>Q :wq<CR>
+nnoremap <leader>w :w<CR>
+" Tabs managment shortcuts
+nnoremap <leader>to :tabnew<CR>
+nnoremap <leader>tc :tabc<CR>
+nnoremap <leader>tt :tabn<CR>
+
+" Complete menu scroll with tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" No mapping for git-gutter
+let g:gitgutter_map_keys = 0
+
+" Code and text snippets
+nnoremap ,.rc :-1read $HOME/.vim/snippets/.skeleton.rc<CR><Esc>/component<CR>
+nnoremap ,.rnc :-1read $HOME/.vim/snippets/.skeleton.rnc<CR><Esc>/component<CR>
+nnoremap ,.html :-1read $HOME/.vim/snippets/.skeleton.html<CR><Esc>
+nnoremap ,.l5 :-1read /home/drugox/.vim/snippets/.skeleton.lorem5<CR><Esc>
+nnoremap ,.l20 :-1read /home/drugox/.vim/snippets/.skeleton.lorem20<CR><Esc>
+nnoremap ,.l50 :-1read /home/drugox/.vim/snippets/.skeleton.lorem50<CR><Esc>
+nnoremap ,.l100 :-1read /home/drugox/.vim/snippets/.skeleton.lorem100<CR><Esc>
+nnoremap ,.l200 :-1read /home/drugox/.vim/snippets/.skeleton.lorem200<CR><Esc>
