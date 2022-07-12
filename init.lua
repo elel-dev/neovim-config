@@ -12,6 +12,5 @@ require "user.nvimtree"
 require "user.neogit"
 
 -- TODO: 
--- 0) NeoGit
 -- 1) impatient (startup time)
 -- 2) lualine for the status bar
