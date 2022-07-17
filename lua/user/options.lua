@@ -39,10 +39,3 @@ vim.opt.shortmess:append("c")
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
-
--- SPECIFICS
--- netrw
--- keymaps @keymaps.lua
-vim.g.netrw_browser_split = 2
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
