@@ -10,7 +10,3 @@ require "user.comment"
 require "user.gitsigns"
 require "user.nvimtree"
 require "user.neogit"
-
--- TODO: 
--- 1) impatient (startup time)
--- 2) lualine for the status bar
