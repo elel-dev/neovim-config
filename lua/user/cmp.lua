@@ -20,6 +20,7 @@ local check_backspace = function()
 end
 
 -- Requires NERD FONT installed (e.g. Hack);
+-- yay -S nerd-fonts-hack
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
