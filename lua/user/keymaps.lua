@@ -17,7 +17,7 @@ keymap("n", "<leader>qq", ":q!<cr>", opts)
 keymap("n", "<leader>c", ":q<cr>", opts)
 
 -- Format
-keymap("n", "<leader>p", ":lua vim.lsp.buf.formatting()<cr>", opts)
+keymap("n", "<leader>p", ":lua vim.lsp.buf.format {async = true} <cr>", opts)
 
 -- Git
 --keymap("n", "<leader>g", ":Neogit<cr>", opts)
