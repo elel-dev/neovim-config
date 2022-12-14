@@ -5,9 +5,9 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "all",
+  ensure_installed = { "typescript", "javascript", "python", "json", "css", "go", "html", "rust", "r" }, -- on low end computer, you need to install manullay
   sync_install = false,
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  ignore_install = { "all" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
