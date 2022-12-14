@@ -37,6 +37,7 @@ local options = {
 vim.opt.shortmess:append("c")
 
 vim.cmd("autocmd BufRead,BufEnter *.astro set filetype=astro")
+vim.cmd("autocmd BufRead,BufEnter *.ejs set filetype=ejs")
 
 for key, value in pairs(options) do
   vim.opt[key] = value
