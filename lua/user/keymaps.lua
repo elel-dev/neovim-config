@@ -43,9 +43,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>s", ":NvimTreeToggle<cr>", opts)
 
 -- Telescope
-keymap("n", "<leader>tf", "<cmd>Telescope find_files<cr>", opts)
---keymap("n", "<leader>tf", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>tg", "<cmd>Telescope live_grep<cr>", opts)
+-- look at @Telescope file
 
 -- VISUAL --
 -- Stay in indent mode

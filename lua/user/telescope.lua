@@ -4,6 +4,12 @@ if not status_ok then
   return
 end
 
+local ok_builtin, builtin = pcall(require, "telescope.builtin")
+if not ok_builtin then
+  print("telescope package is missing")
+  return
+end
+
 --telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"
@@ -104,3 +110,11 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+
+-- Keymaps
+vim.keymap.set("n", "<leader>ff", builtin.git_files, {})
+vim.keymap.set("n", "<leader>fp", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", function()
+  builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
