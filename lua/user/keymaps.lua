@@ -44,6 +44,8 @@ keymap("n", "<leader>s", ":NvimTreeToggle<cr>", opts)
 
 -- Telescope
 -- look at @Telescope file
+-- Harpoon
+-- look at @Harpoon file
 
 -- VISUAL --
 -- Stay in indent mode

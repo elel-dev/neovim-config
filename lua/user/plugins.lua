@@ -77,6 +77,8 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim" -- telescope fuzzy finder
   use 'nvim-telescope/telescope-media-files.nvim' -- image preview in telescope
+  -- Harpoon
+  use 'theprimeagen/harpoon' -- jump between bookmarked files
 
   -- Commenting
   use "numToStr/Comment.nvim" -- toggle comment on code blocks
