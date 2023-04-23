@@ -4,8 +4,7 @@ if not status_ok then
   return
 end
 
-local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.ejs = "html" -- the ejs filetype will use the html parser and queries.
+local ft_to_parser = vim.treesitter.language.register("html","ejs")
 
 configs.setup {
   ensure_installed = { "typescript", "javascript", "python", "json", "css", "go", "html", "rust", "r" }, -- on low end computer, you need to install manullay
