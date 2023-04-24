@@ -14,7 +14,6 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
--- new way to define mappings
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
 
@@ -22,6 +21,18 @@ local function on_attach(bufnr)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
+  -- Default mappings. Feel free to modify or remove as you wish.
+  --
+  -- BEGIN_DEFAULT_ON_ATTACH
+  vim.keymap.set('n', 'a',     api.fs.create,                         opts('Create'))
+  vim.keymap.set('n', 'd',     api.fs.remove,                         opts('Delete'))
+  vim.keymap.set('n', 'r',     api.fs.rename,                         opts('Rename'))
+  vim.keymap.set('n', 'x',     api.fs.cut,                            opts('Cut'))
+  -- END_DEFAULT_ON_ATTACH
+
+  -- Mappings migrated from view.mappings.list
+  --
+  -- You will need to insert "your code goes here" for any mappings with a custom action_cb
   vim.keymap.set('n', 'l', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
