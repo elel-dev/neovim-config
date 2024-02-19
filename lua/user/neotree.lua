@@ -1,4 +1,4 @@
--- Safely call colorscheme command from vim
+-- Safely call neo tree command from vim
 local status_ok, module = pcall(require, "neo-tree")
 if not status_ok then
   print("neo tree require call failed inside neotree.lua")
@@ -99,7 +99,7 @@ require("neo-tree").setup({
         commands = {},
         window = {
           position = "left",
-          width = 33,
+          width = 30,
           mapping_options = {
             noremap = true,
             nowait = true,

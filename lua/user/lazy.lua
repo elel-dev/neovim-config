@@ -24,7 +24,25 @@ require("lazy").setup({
   },
 
   -- LSP
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+    },
+  },
+
+  -- CMP
+  {
+    'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+      'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+      'L3MON4D3/LuaSnip', -- Snippets plugin
+    },
+  },
+  
   -- GIT
+  -- Neogit
   {
     "NeogitOrg/neogit",
     dependencies = {
@@ -33,6 +51,10 @@ require("lazy").setup({
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true
+  },
+  -- Gitsigns
+  {
+    "lewis6991/gitsigns.nvim"
   },
   
   -- Neotree
@@ -45,5 +67,11 @@ require("lazy").setup({
     },
 
   },
-
+  
+  -- MISC
+  -- Comment
+  {
+      'numToStr/Comment.nvim',
+      lazy = false,
+  },
 })
