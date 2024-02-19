@@ -1,3 +1,11 @@
+-- Safely import needed packages
+local status_ok, telescope_builtin = pcall(require, "telescope.builtin")
+if not status_ok then
+  print("Require call for telescope.builtin failed in file keymaps.lua")
+  return
+end
+
+
 -- Options
 local opts = { noremap = true, silent = true }
 
@@ -40,12 +48,14 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- File Explorer
 --keymap("n", "<leader>s", ":Lex 25<cr>", opts)
-keymap("n", "<leader>s", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>s", ":Neotree reveal toggle<cr>", opts)
 
 -- Telescope
--- look at @Telescope file
--- Harpoon
--- look at @Harpoon file
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, {})
+
 
 -- VISUAL --
 -- Stay in indent mode

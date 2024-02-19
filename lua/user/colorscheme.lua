@@ -1,6 +1,8 @@
+-- Quickly set the right variable name
 local colorscheme = "gruvbox"
 --local colorscheme = "darkplus"
 
+-- Safely call colorscheme command from vim
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
   print("colorscheme " .. colorscheme .. " not found!")
