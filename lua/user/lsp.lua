@@ -1,6 +1,6 @@
 -- Safely call mason require
-local status_ok, mason = pcall(require, "mason")
-if not status_ok then
+local status_ok_mason, mason = pcall(require, "mason")
+if not status_ok_mason then
   print("mason require call failed inside mason.lua")
   return
 end
@@ -8,13 +8,21 @@ end
 mason.setup()
 
 -- Safely lspconfig require
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
+local status_ok_lsp, lspconfig = pcall(require, "lspconfig")
+if not status_ok_lsp then
   print("lspconfig require call failed inside mason.lua")
   return
 end
 
-lspconfig.tsserver.setup {}
+lspconfig.astro.setup {}
+lspconfig.bashls.setup {}
+lspconfig.cssls.setup {}
+lspconfig.cssmodules_ls.setup {}
+lspconfig.docker_compose_language_service.setup {}
+lspconfig.dockerls.setup {}
+lspconfig.html.setup {}
+lspconfig.lua_ls.setup {}
+lspconfig.tailwindcss.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   --settings = {
