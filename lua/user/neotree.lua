@@ -1,11 +1,11 @@
 -- Safely call neo tree command from vim
-local status_ok, module = pcall(require, "neo-tree")
+local status_ok, neotree = pcall(require, "neo-tree")
 if not status_ok then
   print("neo tree require call failed inside neotree.lua")
   return
 end
 
-require("neo-tree").setup({
+neotree.setup({
         close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
         enable_git_status = true,

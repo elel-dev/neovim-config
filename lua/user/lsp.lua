@@ -23,6 +23,7 @@ lspconfig.dockerls.setup {}
 lspconfig.html.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.tailwindcss.setup {}
+lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   --settings = {
