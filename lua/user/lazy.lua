@@ -74,4 +74,10 @@ require("lazy").setup({
       'numToStr/Comment.nvim',
       lazy = false,
   },
+  -- Tailwind class sorter
+  {
+      'laytan/tailwind-sorter.nvim',
+      dependencies = {'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim'},
+      build = 'cd formatter && npm i && npm run build',
+  },
 })
