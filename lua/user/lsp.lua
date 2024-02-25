@@ -22,6 +22,7 @@ lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.html.setup {}
 lspconfig.lua_ls.setup {}
+lspconfig.sqlls.setup {}
 lspconfig.tailwindcss.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
@@ -34,8 +35,8 @@ lspconfig.rust_analyzer.setup {
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 -- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
