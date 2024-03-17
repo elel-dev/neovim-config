@@ -14,6 +14,8 @@ if not status_ok_lsp then
   return
 end
 
+lspconfig.pyright.setup {}
+lspconfig.clangd.setup{}
 lspconfig.astro.setup {}
 lspconfig.bashls.setup {}
 lspconfig.cssls.setup {}
