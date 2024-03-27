@@ -6,8 +6,8 @@ if not status_ok then
 end
 
 configs.setup({
-    --ensure_installed = { "typescript", "javascript", "python", "json", "css", "go", "html", "rust", "r" }, -- on low end computer, you need to install manullay
+    --ensure_installed = { "astro", "typescript", "javascript", "python", "json", "css", "go", "html", "rust", "r" }, -- on low end computer, you need to install manullay
     sync_install = false,
     highlight = { enable = true },
-    indent = { enable = true },  
+    indent = { enable = true }
 })
