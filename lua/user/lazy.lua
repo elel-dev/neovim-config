@@ -80,4 +80,10 @@ require("lazy").setup({
       dependencies = {'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim'},
       build = 'cd formatter && npm i && npm run build',
   },
+  -- Harpoon
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2", -- TODO: monitor this
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" }
+  },
 })
