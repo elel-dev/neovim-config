@@ -1,12 +1,4 @@
-require "user.options"
-require "user.keymaps"
-require "user.colorscheme"
-require "user.lazy"
-require "user.neotree"
-require "user.treesitter"
-require "user.comment"
-require "user.gitsigns"
-require "user.misc"
-require "user.harpoon"
-require "user.lsp"
-require "user.cmp"
+require("config.options")
+require("config.lazy")
+require("config.colorscheme")
+require("config.keymaps")
