@@ -4,7 +4,6 @@ local options = {
   --termguicolors = true, -- set term gui colors (most terminals support this)
   --clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   cmdheight = 1, -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cm
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
   hlsearch = false, -- highlight all matches on previous search pattern
@@ -23,14 +22,14 @@ local options = {
   updatetime = 300, -- faster completion (4000ms default)
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true, -- convert tabs to spaces
-  shiftwidth = 2, -- the number of spaces inserted for each indentation
+  shiftwidth = 4, -- the number of spaces inserted for each indentation
   tabstop = 2, -- insert 2 spaces for a tab
   cursorline = false, -- highlight the current line
   number = true, -- set numbered lines
   relativenumber = true, -- set relative numbered lines
   numberwidth = 4, -- set number column width to 2 {default 4}
   wrap = false, -- display lines as one long line
-  scrolloff = 20, -- starts to scroll down from x lines
+  scrolloff = 30, -- starts to scroll down from x lines
   background = "dark", --darker background
 }
 
