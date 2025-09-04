@@ -8,7 +8,10 @@ return {
     opts = {
       -- use :Mason for installing lsp
       servers = {
-        lua_ls = {}
+        lua_ls = {},
+        ts_ls = {},
+        gopls = {},
+        rust_analyzer = {}
       }
     },
     config = function(_, opts)
