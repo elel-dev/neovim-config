@@ -1,5 +1,5 @@
 -- Quickly set the right variable name
---local colorscheme = "gruvbox"
+-- local colorscheme = "gruvbox"
 local colorscheme = "tokyonight"
 
 -- Safely call colorscheme command from vim
